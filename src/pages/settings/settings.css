@@ -1,0 +1,121 @@
+.settings {
+  display: flex;
+  background-color: #E3DFFD;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.settingsWrapper {
+
+  margin: auto;
+  display: flow-root;
+  background-color:#ECF2FF;
+  padding: 30px 60px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
+}
+.ack{
+  
+  font-size:18px;
+  font-family: "Varela Round", Arial !important;
+}
+
+.settingsTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+label{
+  font-family: "Varela Round", Arial !important;
+  
+}
+.settingsUpdateTitle {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: black;
+  font-weight: bold;
+  font-family: "Lora", sans-serif;
+}
+
+.settingsTitleDelete {
+  color: red;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.settingsForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.settingsPP {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.settingsPP > img {
+  height: 70px;
+  width: 70px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.settingsPPIcon {
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 50%;
+  margin-left: 10px;
+  color: white;
+  background-color: lightcoral;
+  cursor: pointer;
+}
+
+.settingsPPButton:focus {
+  outline-style: none;
+}
+
+.settingsForm > label {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.settingsPPInput {
+  width: 30%;
+}
+
+.settingsForm > input {
+  color: gray;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 30px;
+  border: none;
+  border-bottom: 1px solid lightgray;
+}
+
+.settingsSubmitButton {
+  align-self: center;
+  width: 150px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background-color: #443C68;
+  padding: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.settingsSubmitButton:hover {
+  background-color: rgb(1, 114, 114);
+}
