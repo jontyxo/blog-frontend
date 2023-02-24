@@ -7,20 +7,20 @@ import "./homepage.css";
 import axios from "axios"
 
 export default function Homepage() {
-//   const[posts,setPosts]=useState([]);
-//   const {search} = useLocation();
+  const[posts,setPosts]=useState([]);
+  const {search} = useLocation();
   
-//   useEffect(()=>{
-//     const fetchPosts=async()=>{
-//       const response=await axios.get("/api/posts"+search)
-//       setPosts(response.data)
+  useEffect(()=>{
+    const fetchPosts=async()=>{
+      const response=await axios.get("/api/posts"+search)
+      setPosts(response.data)
      
-//     }
+    }
     
-//     fetchPosts();
-//   },[search])
+    fetchPosts();
+  },[search])
 
-//   const location = useLocation();
+  const location = useLocation();
  
   return (
     <>
