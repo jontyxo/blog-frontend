@@ -8,28 +8,34 @@ import axios from "axios"
 
 export default function Homepage() {
   const[posts,setPosts]=useState([]);
-  const {search} = useLocation();
+  const [loading,setLoading] = useState(false);
+  
   
   useEffect(()=>{
     const fetchPosts=async()=>{
-      const response=await axios.get("/api/posts"+search)
+      const response=await axios.get("/api/posts")
+      console.log(response.data)
       setPosts(response.data)
+    setLoading(false);
+
      
     }
-    
-    fetchPosts();
-  },[search])
+    setLoading(true);
+   fetchPosts();
+  },[])
 
-  const location = useLocation();
  
   return (
     <>
       <Header />
+      {loading && 
+      <span>dnfabjabalbdj</span>
+      }
       <h1 className="h1home">Recent Blogs...</h1>
-//       <div className="home">
-//         <Posts posts={posts} />
+      <div className="home">
+        <Posts posts={posts} />
       
-//       </div>
+      </div>
     </>
   );
 }
