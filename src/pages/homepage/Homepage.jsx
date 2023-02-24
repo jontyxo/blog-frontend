@@ -26,10 +26,10 @@ export default function Homepage() {
     <>
       <Header />
       <h1 className="h1home">Recent Blogs...</h1>
-      <div className="home">
-        <Posts posts={posts} />
+//       <div className="home">
+//         <Posts posts={posts} />
       
-      </div>
+//       </div>
     </>
   );
 }
