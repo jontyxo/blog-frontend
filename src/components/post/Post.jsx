@@ -9,7 +9,7 @@ export default function Post({post}) {
 
   return (
     <div className="post">
-    {console.log(post)}
+    
     {post.photo && 
   <>
 

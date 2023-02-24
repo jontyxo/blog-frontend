@@ -14,14 +14,14 @@ export default function Homepage() {
     const fetchPosts=async()=>{
       const response=await axios.get("/api/posts"+search)
       setPosts(response.data)
-      console.log(response);
+     
     }
     
     fetchPosts();
   },[search])
 
   const location = useLocation();
-  console.log(location.pathname);
+ 
   return (
     <>
       <Header />
