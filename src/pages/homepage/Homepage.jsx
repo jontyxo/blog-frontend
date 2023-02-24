@@ -13,9 +13,9 @@ export default function Homepage() {
   
   useEffect(()=>{
     const fetchPosts=async()=>{
-      const response=await axios.get("/api/posts")
-      console.log(response.data)
-      setPosts(response.data)
+    const pos=await axios.get("/api/posts")
+      console.log(pos.data)
+      setPosts(pos.data)
     setLoading(false);
 
      
