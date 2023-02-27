@@ -13,7 +13,7 @@ export default function Homepage() {
   
   useEffect(()=>{
     const fetchPosts=async()=>{
-    const pos=await axios.get("/api/posts")
+    const pos=await axios.get("https://blog-app-qwsx.onrender.com/api/posts")
       console.log(pos.data)
       setPosts(pos.data)
     setLoading(false);
