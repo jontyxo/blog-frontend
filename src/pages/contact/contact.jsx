@@ -11,7 +11,7 @@ function Contact() {
     const [sent,setSent]=useState(false);
     const handleSubmit=async(e)=>{
       e.preventDefault();
-      try{await axios.post("https://blog-app-qwsx.onrender.com/api/contact",{
+      try{await axios.post("/api/contact",{
         email:inputref.current.value,
         message:messageref.current.value
        })
