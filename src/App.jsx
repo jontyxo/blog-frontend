@@ -7,12 +7,13 @@ import Single from "./pages/single/Single";
 import Write from "./pages/write/Write";
 import { createBrowserRouter,createRoutesFromElements,Route,Link,Outlet,RouterProvider } from "react-router-dom";
 import { useContext } from "react";
-import { Context, ContextProvider } from "./context/Context";
+import { Context } from "./context/Context";
 
 import Contact from "./pages/contact/contact";
 
 function App() {
   const {user}=useContext(Context)
+  
   
   const router=createBrowserRouter(
     
@@ -72,10 +73,63 @@ function App() {
 }
 
 const Root=()=>{
+  const {user,dispatch}=useContext(Context)
 
+  const handleLogout=()=>{
+dispatch({type:"LOGOUT"})
+  }
   return (
     <>
-        <Topbar />
+        <div className="top">
+      
+      <div className="topCenter">
+        <ul className="topList">
+          <li className="topListItem">
+            <Link className="link" to="/">
+              HOME
+            </Link>
+          </li>
+        
+          <li className="topListItem">
+            <Link className="link" to="/contact">
+              CONTACT
+            </Link>
+          </li>
+          <li className="topListItem">
+            <Link className="link" to="/write">
+              WRITE
+            </Link>
+          </li>
+          {user && <li className="topListItem" onClick={handleLogout}>LOGOUT</li>}
+        </ul>
+      </div>
+      <div className="topRight">
+        {user ? (
+          <Link className="link" to="/settings">
+            <img
+              className="topImg"
+              src={user.profilePic}
+              alt=""
+            />
+            <span>Hi, {user.username}</span>
+          </Link>
+        ) : (
+          <ul className="topList">
+            <li className="topListItem">
+              <Link className="link" to="/login">
+                LOGIN
+              </Link>
+            </li>
+            <li className="topListItem">
+              <Link className="link" to="/register">
+                REGISTER
+              </Link>
+            </li>
+          </ul>
+        )}
+       
+      </div>
+    </div>
       <div>
         <Outlet />
       </div>
