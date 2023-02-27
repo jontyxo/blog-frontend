@@ -12,7 +12,7 @@ export default function Register() {
     e.preventDefault();
     try{
 
-      const res=await axios.post("/api/auth/register",{
+      const res=await axios.post("https://blog-app-qwsx.onrender.com/api/auth/register",{
         username,
         email,
         password
