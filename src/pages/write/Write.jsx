@@ -36,7 +36,7 @@ const photoid=res.data.public_id.split("/")[1];
     }
     try{
 
-      const res=await axios.post("/api/posts",newPost)
+      const res=await axios.post("https://blog-app-qwsx.onrender.com/api/posts",newPost)
       window.location.replace("/post/"+res.data._id)
 
     }
