@@ -36,7 +36,7 @@ export default function SinglePost() {
       {post.photo && 
         <img
           className="singlePostImg"
-          src={`https://res.cloudinary.com/dvjc0fusx/image/upload/v1677194349/blog-app/${imgId}.png`}
+          src={`https://res.cloudinary.com/dvjc0fusx/image/upload/v1677194349/blog-app/${imgId}.jpg`}
           alt=""
         />
       }
