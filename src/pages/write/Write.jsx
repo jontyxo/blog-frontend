@@ -1,13 +1,16 @@
-import { useContext, useState,useRef } from "react";
+import { useContext, useState } from "react";
 import "./write.css";
 import axios from "axios"
 import { Context } from "../../context/Context";
+import MoonLoader from "react-spinners/MoonLoader";
+
 
 
 export default function Write() {
   const [title,setTitle]=useState("");
   const [desc,setDesc]=useState("");
   const [file,setFile]=useState(null);
+  const [posting,setPosting]=useState(false);
   const {user}=useContext(Context)
 
   const handleSubmit=async(e)=>{
@@ -35,8 +38,10 @@ const photoid=res.data.public_id.split("/")[1];
 
     }
     try{
+      setPosting(true);
+      const res=await axios.post("/api/posts",newPost);
+      setPosting(false);
 
-      const res=await axios.post("https://blog-app-qwsx.onrender.com/api/posts",newPost)
       window.location.replace("/post/"+res.data._id)
 
     }
@@ -47,6 +52,21 @@ const photoid=res.data.public_id.split("/")[1];
 
   return (
     <div className="write">
+    {
+posting &&
+<div className="moonloaderWrite">
+<span className="moonloaderSpan">Posting</span>
+
+    <MoonLoader 
+    color="#000"
+    loading={posting}
+    
+    size={50}
+    aria-label="Loading Spinner"
+    data-testid="loader"
+  />
+</div>
+    }
     {file && 
       <img
         className="writeImg"
@@ -83,7 +103,7 @@ const photoid=res.data.public_id.split("/")[1];
 
           />
         </div>
-        <button className="writeSubmit" type="submit">
+        <button className="writeSubmit" type="submit" disabled={posting}>
           Publish
         </button>
       </form>
