@@ -15,7 +15,7 @@ export default function Post({post}) {
 
       <img
         className="postImg"
-          src={`https://res.cloudinary.com/dvjc0fusx/image/upload/v1677194349/blog-app/${post.photo.split("/")[0]}.png`}     
+          src={`https://res.cloudinary.com/dvjc0fusx/image/upload/v1677194349/blog-app/${post.photo.split("/")[0]}.jpg`}     
         alt=""
       />
       {/* <img 
