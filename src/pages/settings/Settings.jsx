@@ -34,7 +34,7 @@ const photoid=res.data.public_id.split("/")[1];
 updatedUser.profilePic=`https://res.cloudinary.com/dvjc0fusx/image/upload/v1677195922/blog-app/${photoid}.png`
     }
     try {
-      const res = await axios.put("/api/users/" + user._id, updatedUser);
+      const res = await axios.put("https://blog-app-qwsx.onrender.com/api/users/" + user._id, updatedUser);
       setSuccess(true);
     dispatch({type:"UPDATE_SUCCESS", payload:res.data})
 
