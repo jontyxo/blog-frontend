@@ -85,12 +85,13 @@ posting &&
            {/* <input id="fileInput" onClick={()=>{widgetRef.current.open()}} 
            
           /> */}
-          <input
+         <input
             className="writeInput"
             placeholder="Title"
             type="text"
             autoFocus={true}
             onChange={e=>setTitle(e.target.value)}
+            required="true"
           />
         </div>
         <div className="writeFormGroup">
@@ -100,6 +101,8 @@ posting &&
             type="text"
             autoFocus={true}
             onChange={e=>setDesc(e.target.value)}
+            required="true"
+
 
           />
         </div>
